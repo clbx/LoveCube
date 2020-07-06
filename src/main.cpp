@@ -60,7 +60,7 @@ void setup() {
   server.begin();
 }
  
-void loop() { // Generate a Sine wave
+void loop() {
   
   if(up){
     left++;
