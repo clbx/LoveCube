@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
-
+.pio/
+.vscode/ å
 
 /include/credentials.h
 
