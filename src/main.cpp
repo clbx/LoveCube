@@ -77,6 +77,7 @@ void setup() {
       tft.clearScreen();
       for (size_t i = 0; i < len; i++) {
         newMsg = true;
+        Serial.print((char)data[i]);
         tft.print((char)data[i]);
       }
       Serial.println();
