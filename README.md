@@ -10,4 +10,4 @@ All wirinng diagrams, code, and 3D models are/will be available in this reposito
 
 ![circuit](doc/circuit.png)
 
-![boxmodel](doc/boxmodel.png)
+![boxmodel](doc/boxmodel.PNG)
