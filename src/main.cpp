@@ -5,6 +5,7 @@
 #include <SPI.h>
 #include <SSD_13XX.h>
 #include "credentials.h"
+#include "_fonts/Terminal_9.c"
 
 Credentials creds;
 
@@ -53,9 +54,11 @@ void setup() {
 	  if (bitRead(errorCode, 1)) Serial.print("CS or DC pin mismach!\n");
   }
   else {
-	  Serial.println(F("Benchmark Sketch V1.1"));
+	  Serial.println(F("LoveCube Started"));
+    tft.setFont(&Terminal_9);
 	  tft.setTextColor(WHITE);
 	  tft.setTextScale(2);
+    tft.setRotation(3);
   }
  
   WiFi.begin(ssid, password);
