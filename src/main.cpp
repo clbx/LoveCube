@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <Wire.h>
 #include <Arduino.h>
-#include <ESPAsyncWebServer.h>
+#include <HTTPClient.h>
 #include <SPI.h>
 #include <SSD_13XX.h>
 #include "credentials.h"
@@ -11,6 +11,8 @@ Credentials creds;
 
 const char* ssid = creds.ssid; 
 const char* password = creds.pass;
+const char* server = creds.server;
+int id = creds.id;
 bool newmsg = false;
 
 
@@ -32,8 +34,12 @@ int left = 120; //255= 3.3V 128=1.65V
 int right = 180;
 bool up = true;
 bool newMsg = false;
+String storedMessage = "NOTWHATITLLBE";
+HTTPClient http;
 
-AsyncWebServer server(80);
+String serverpath = String(server + String("/api/getMessage?token=" + String(id)));
+
+int delayTimer = 0;
  
 void setup() {
 
@@ -65,31 +71,49 @@ void setup() {
  
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
-    Serial.println("Connecting to WiFi..");
+    tft.println("Connecting\n to WiFi..");
   }
   
+  tft.clearScreen();
+  tft.println("Connected");
+  tft.print("IP: ");
+  tft.print(WiFi.localIP());
   Serial.print("IP: ");
   Serial.println(WiFi.localIP());
- 
-  server.on(
-    "/post",
-    HTTP_POST,
-    [](AsyncWebServerRequest * request){},
-    NULL,
-    [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
-      tft.clearScreen();
-      for (size_t i = 0; i < len; i++) {
-        newMsg = true;
-        Serial.print((char)data[i]);
-        tft.print((char)data[i]);
-      }
-      Serial.println();
-      request->send(200);
-  });
-  server.begin();
+  delay(5000);
+  tft.clearScreen();
+
 }
- 
+
 void loop() {
+  //Every 10 seconds check for a new message
+  if(delayTimer == 100){
+    Serial.println("Checking for Message");
+    http.begin(serverpath.c_str());
+    int httpResponseCode = http.GET();
+
+    if(httpResponseCode >0){
+      Serial.print("HTTP Response: ");
+      Serial.println(httpResponseCode);
+      String payload = http.getString();
+      Serial.print("Got message: ");
+      Serial.println(payload);
+      if(payload != storedMessage){
+        Serial.println("New message :)");
+        newMsg = true;
+        storedMessage = payload;
+      }
+      else{
+        Serial.println("Not new message :(");
+      }
+      
+    }
+
+    http.end();
+    delayTimer = 0;
+  }else{
+    delayTimer++;
+  }
   
   if(up){
     left++;
@@ -118,5 +142,6 @@ void loop() {
     dacWrite(DAC2,0);
   }
   delay(100);
+  
   
 }
