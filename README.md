@@ -10,6 +10,9 @@ All wirinng diagrams, code, and 3D models are available in this repository. The 
 
 ![circuit](doc/circuit.png)
 
-![boxmodel](doc/boxmodel.PNG)
-
-![picture](doc/picture.jpg)
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer"><img width="800" src="./doc/circuit.png alt="circuit"></a></br>
+  <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/boxmodel.png alt="box model"></a>
+  <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/lidmodel.png alt="lid model"></a></br>
+  <a target="_blank" rel="noopener noreferrer"><img width="800" style="transform:rotate(90deg);" src="./doc/circuit.png alt="circuit"></a>
+</p>
