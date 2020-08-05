@@ -14,7 +14,7 @@ In it's current state, its pretty insecure, you have to send the server REST mes
 
 <p align="center">
   <a target="_blank" rel="noopener noreferrer"><img width="800" src="./doc/circuit.png" alt="circuit"></a></br>
-  (I ended up using a larger prototyping board than when I made this design)
+  (I ended up using a larger prototyping board than when I made this design)<br>
   <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/boxmodel.PNG" alt="box model"></a>
   <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/lidmodel.png" alt="lid model"></a></br>
   <a target="_blank" rel="noopener noreferrer"><img width="800" style="transform:rotate(90deg);" src="./doc/picture.jpg" alt="picture"></a>
