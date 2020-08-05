@@ -10,7 +10,7 @@ All wirinng diagrams, code, and 3D models are available in this repository. The 
 
 In it's current state, its pretty insecure, you have to send the server REST messages through postman (or god forbid your browser) so it's in a janky state right now (but it works!).
 
-This communicates with the [LoveCube Server](github.com/clbx/LoveCube-Server) and (soon) will have a phone app to send messages with!
+This communicates with the [LoveCube Server](https://github.com/clbx/LoveCube-Server) and (soon) will have a phone app to send messages with!
 
 <p align="center">
   <a target="_blank" rel="noopener noreferrer"><img width="800" src="./doc/circuit.png" alt="circuit"></a></br>
