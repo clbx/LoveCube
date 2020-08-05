@@ -12,7 +12,7 @@ All wirinng diagrams, code, and 3D models are available in this repository. The 
 
 <p align="center">
   <a target="_blank" rel="noopener noreferrer"><img width="800" src="./doc/circuit.png" alt="circuit"></a></br>
-  <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/boxmodel.png" alt="box model"></a>
+  <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/boxmodel.PNG" alt="box model"></a>
   <a target="_blank" rel="noopener noreferrer"><img width="400" src="./doc/lidmodel.png" alt="lid model"></a></br>
-  <a target="_blank" rel="noopener noreferrer"><img width="800" style="transform:rotate(90deg);" src="./doc/picture.jpg" alt="picture"></a>
+  <a target="_blank" rel="noopener noreferrer"><img width="800" src="./doc/picture.jpg" alt="picture"></a>
 </p>
