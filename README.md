@@ -12,4 +12,4 @@ All wirinng diagrams, code, and 3D models are available in this repository. The 
 
 ![boxmodel](doc/boxmodel.PNG)
 
-![picture](doc/picture.png)
+![picture](doc/picture.jpg)
