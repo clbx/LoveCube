@@ -50,9 +50,6 @@ void setup() {
   while (!Serial && ((millis() - debug_start) <= 5000));
   tft.begin(false);
   delay(30);
-  //the following it's mainly for Teensy
-  //it will help you to understand if you have choosed the
-  //wrong combination of pins!
   errorCode = tft.getErrorCode();
   if (errorCode != 0) {
 	  Serial.print("Init error! ");
