@@ -99,6 +99,8 @@ void loop() {
         Serial.println("New message :)");
         newMsg = true;
         storedMessage = payload;
+        tft.clearScreen();
+        tft.print(storedMessage);
       }
       else{
         Serial.println("Not new message :(");
